@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<% include ../partials/head %>
+<body>
+    <% include ../partials/header %>
+    <div class="post">
+        <div class="title"><%= post.title %></div>
+        <div class="body"><%= post.body %></div>
+    </div>
+
+    <%
+        comments.reverse().forEach(comment => {
+    %>
+
+    <div class="comment">
+        <p><%= comment.text %></p>
+    </div>
+
+    <%
+    });
+    %>
+</body>
+</html>

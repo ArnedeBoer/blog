@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0 auto;
+    width: 70%;
+    text-align: justify;
+}
+
+main {
+    margin-bottom: 50px;
+}
+
+header li {
+    display: inline-block;
+    margin: 20px 20px 20px 0px;
+}
+
+/* postList */
+.post {
+    padding: 1rem 0rem;
+    margin: 1rem 0rem;
+}
+
+.post.light {
+    background-color: lightgray;
+}
+
+.post.dark {
+    background-color: gray;
+}
+
+.post a {
+    padding-left: 1rem;
+    float: left;
+    display: inline-block;
+}
+
+.post p {
+    padding-right: 1rem;
+    float: right;
+    display: inline-block;
+    text-align: right;
+}
+
+/* form */
+
+label, input, textarea {
+    display: inline-block;
+}
+
+input, textarea {
+    margin: 10px 0px;
+}
+
+.text-field, textarea {
+    width: 400px;
+}
+
+textarea {
+    height: 200px;
+}
+
+/* loginForm */
+#loginForm, #registerForm {
+    margin: 100px auto;
+    width: 50%;
+}
+
+#loginForm h2, #registerForm h2 {
+    margin-bottom: 20px;
+}
+
+#submit {
+    margin-right: 30px;
+}
