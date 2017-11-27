@@ -3,12 +3,25 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || 'development';
-const config = require(`${__dirname}/../config/config.json`)[env];
 const db = {};
+let config;
+
+try {
+  config = require(`${__dirname}/../config/config.json`)[env];
+} catch (err) {
+  console.log('Include a config.json or use enviroment variables');
+}
+
+const database = process.env.POSTGRES_DATABASE || 'blog_application'; // as the assignment specifies
+const user = process.env.POSTGRES_USER;
+const password = process.env.POSTGRES_PASSWORD;
+const host = process.env.POSTGRES_HOST || 'localhost'; // as the assignment specifies
+const dialect = process.env.POSTGRES_DIALECT || 'postgres'; // as the assignment specifies
 
 let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable]);
+
+if (config === undefined) {
+  sequelize = new Sequelize(database, user, password, { host, dialect });
 } else {
   sequelize = new Sequelize(
     config.database, config.username, config.password, config
